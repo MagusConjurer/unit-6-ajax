@@ -1,7 +1,7 @@
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=1G6SPeGpBmZUH9CoKUlujrqu8YG7ruMz&q=game&limit=5&offset=0&rating=PG&lang=en";
+var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=1G6SPeGpBmZUH9CoKUlujrqu8YG7ruMz&q=game&limit=10&offset=0&rating=PG&lang=en";
 
 // Array of items to create buttons for
-var searchList = [];
+var topics = [];
 
 $.ajax({
     url: queryURL,
@@ -18,7 +18,7 @@ function renderImages(res){
     newGIF.addClass("gif stop");
     newGIF.data("data-val", i);
     newGIF.attr("alt", res.data[i].title)
-    addToDeck(newGIF);
+    addToDeck(newGIF, res.data[i].rating);
   };
 
   
@@ -45,10 +45,10 @@ function renderImages(res){
   });
 };
 
-function addToDeck(img){
+function addToDeck(img, rating){
   var column = $("<div>").addClass("col-sm-4");
   var newCard = $("<div>").addClass("card");
-  var newCardBody = $("<div>").addClass("card-body");
+  var newCardBody = $("<div>").addClass("card-body").text("Rating: " + rating.toUpperCase());
   var newCardTitle = $("<h5>").addClass("card-title");
   var newCardText = $("<p>").addClass("card-text");
 
