@@ -1,4 +1,4 @@
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=1G6SPeGpBmZUH9CoKUlujrqu8YG7ruMz&q=game&limit=10&offset=0&rating=PG&lang=en";
+var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=1G6SPeGpBmZUH9CoKUlujrqu8YG7ruMz&q=goat&limit=10&offset=0&rating=PG-13&lang=en";
 
 // Array of items to create buttons for
 var topics = [];
@@ -63,4 +63,15 @@ function addToDeck(img, rating){
 
 
 // Create buttons that can be pressed to change the displayed GIFS
+function createButtons(){
+  
+}
 
+// Add a new button from submitted input
+
+$(document).on("click", "#add", function(event){
+  event.preventDefault();
+  var input = $("#newTopic");
+  topics.push(input.val());
+  input.val("");
+});
