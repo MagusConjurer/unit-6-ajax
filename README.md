@@ -2,7 +2,7 @@
 
 Using AJAX to pull from the Giphy API
 
-Link to the live page [here](https://magusconjurer.github.io/portfolio).
+Link to the live page [here](https://magusconjurer.github.io/unit-6-ajax/).
 
 ### Idea
 This is the week six project from the Full Stack Developer Bootcamp. Using our new knowledge of AJAX, we were tasked to create a page using API calls.
