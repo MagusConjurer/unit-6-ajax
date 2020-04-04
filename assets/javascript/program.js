@@ -1,16 +1,17 @@
-var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=1G6SPeGpBmZUH9CoKUlujrqu8YG7ruMz&q=goat&limit=10&offset=0&rating=PG-13&lang=en";
-
 // Array of items to create buttons for
 var topics = ["goat","bear","dog"];
 
 createButtons();
 
-$.ajax({
-    url: queryURL,
+function updateImages(url){
+  $.ajax({
+    url: url,
     method: "GET"
   }).then(function(response) {
     renderImages(response);   
   });
+}
+
 
 function renderImages(res){
   $(".card-deck").empty();
@@ -86,5 +87,12 @@ $(document).on("click", "#add", function(event){
   topics.push(input.val());
   input.val("");
 });
+
+$(document).on("click", ".topics", function(event){
+  event.preventDefault();
+  var topic = $(this).text();
+  newURL = "https://api.giphy.com/v1/gifs/search?api_key=1G6SPeGpBmZUH9CoKUlujrqu8YG7ruMz&q=" + topic + "&limit=10&offset=0&rating=PG-13&lang=en";
+  updateImages(newURL);
+})
 
 
