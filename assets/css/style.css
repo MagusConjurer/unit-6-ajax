@@ -1,0 +1,34 @@
+body {
+    color: #ffffff;
+    background-image: url(../images/dark_brick_wall/dark_brick_wall.png);
+    font-family: "Nanum Gothic";
+}
+
+.navbar-brand{
+    font-family: "Shadows Into Light";
+    letter-spacing: 3px;
+}
+
+.card-body {
+    color: gray;
+}
+
+#button-menu {
+    margin: 20px 0px;
+}
+
+.topics {
+    margin: 2px;
+}
+
+#topic-form {
+    margin: 20px 0px;
+}
+
+.card-deck {
+    margin: 20px 0px;
+}
+
+.card {
+    margin : 10px 0px;
+}

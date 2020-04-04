@@ -1,5 +1,5 @@
 // Array of items to create buttons for
-var topics = ["goat","bear","dog"];
+var topics = ["haha","eww","no","hey","bye","sorry","you're welcome"];
 
 createButtons();
 
@@ -23,9 +23,8 @@ function renderImages(res){
     addToDeck(newGIF, res.data[i].rating);
   };
 
-  
   // On click function to switch still image to active or back
-  $(document.body).on("click", ".gif", function(){
+  $(document).on("click", ".gif", function(){
     // Boolean to checking which status the image is in
     var play = $(this).attr("class").includes("play");
     var stop = $(this).attr("class").includes("stop");
@@ -65,6 +64,7 @@ function addToDeck(img, rating){
 
 // Create buttons that can be pressed to change the displayed GIFS
 function createButtons(){
+  $("#button-menu").empty();
   for(var i = 0; i < topics.length; i++){
     var newBtn = $("<button>").addClass("btn btn-dark topics");
     newBtn.text(topics[i]);
@@ -72,19 +72,13 @@ function createButtons(){
   }
 }
 
-function addButton(str){
-  var newBtn = $("<button>").addClass("btn btn-dark topics");
-  newBtn.text(str);
-  $("#button-menu").append(newBtn);
-}
-
 // Add a new button from submitted input
 
 $(document).on("click", "#add", function(event){
   event.preventDefault();
   var input = $("#newTopic");
-  addButton(input.val());
   topics.push(input.val());
+  createButtons();
   input.val("");
 });
 
